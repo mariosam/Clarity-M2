@@ -1,0 +1,31 @@
+<?php
+/**
+ * HTML inputCode
+ * 
+ * @author      MarioSAM <eu@mariosam.com.br>
+ * @version     1.0.0
+ * @date        2021/01
+ * @copyright   Blog do Mario SAM
+ * 
+ * Create the html, css, javascript code to insert ID clarity.
+ */
+
+/** @var $viewModel MarioSAM\Clarity\ViewModel\ClarityViewModel */
+$viewModel = $block->getViewModel();
+
+/** inicializando model e variaveis */
+if ( $viewModel->getEnabled() ) {
+    $_idTrack = $viewModel->getTrackingId();
+?>
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function () {
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "<?php echo $_idTrack; ?>");
+//]]>
+</script>
+<?php } /* if modulo esta ativo */ ?>

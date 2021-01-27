@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * XML system
+ * 
+ * @author      MarioSAM <eu@mariosam.com.br>
+ * @version     1.0.0
+ * @date        2021/01
+ * @copyright   Blog do Mario SAM
+ * 
+ * This XML prepare the admin page config of this module.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!-- Tab is the menu option at left [MARIOSAM] -->
+        <tab id="mariosam" translate="label" sortOrder="250">
+            <label>Mario SAM</label>
+        </tab>
+        <!-- Section is a sub-menu option inside Tab. -->
+        <section id="clarity" translate="label" sortOrder="1000" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Clarity Settings</label>
+            <tab>mariosam</tab>
+            <!-- resource is to ACL -->
+            <resource>MarioSAM_Clarity::module_clarity_config</resource>
+            <!-- Group is the box at right with your config options. -->
+            <group id="configurations" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Clarity Configuration</label>
+                <comment><![CDATA[How to use Clarity? Access the Mario SAM blog and read the post.]]></comment>
+                <!-- Turn On or Turn off this module -->
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <!-- Set the tracking code for your clarity account -->
+                <field id="track_code" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Your code ID</label>
+                    <comment>ex.: 3xkyqgjd4r</comment>
+                </field>
+            </group>
+            <!-- Group to talk with the clients of this module. -->
+            <group id="cla_next_version" translate="label" type="text" sortOrder="999" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Expected for the next versions</label>
+                <comment>
+                    <![CDATA[Below a list of things that I expect to implement in the next version of Clarity module:]]>
+                </comment>
+                <field id="my_contact" translate="label" type="text" sortOrder="99" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>My Contact</label>
+                    <comment>You can talk with me and/or hire me!</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
